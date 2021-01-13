@@ -11,11 +11,14 @@ let color ='black';
 let tamano = 20;
 let pintura = false;
 
+let x1= 40;
+let y1= 300;
+
 
 window.addEventListener("load",  function draw(){
 
   context.font = 'italic bold 300px Roboto, sans-serif ';
-  context.strokeText('A a', 40, 300);
+  context.strokeText('A a', x1, y1);
 
 
    console.log('Se esta mostrando el texto');
@@ -38,19 +41,27 @@ canvas.addEventListener('mousedown', function star(event){
 
 })
 
+
  canvas.addEventListener('mousemove',  function pintar(event){
+
 
     let  pintura= true;
     let x = event.clientX - context.canvas.offsetLeft;
     let y = event.clientY- context.canvas.offsetTop;
 
-  if (pintura) {
+    const distance = Math.sqrt((x- x1) + 
+      (y- y1));
+
+
+  if ( distance< x1 && distance <y1 && pintura) {
 
    context.lineTo(x,y);
    context.strokeStyle= color;
-   context.lineWidth = 10;
+   context.lineWidth = 20;
    context.lineCap= 'round';
    context.stroke();
+
+
   }
   else{
     console.log('No muestra pintura');
@@ -59,11 +70,12 @@ canvas.addEventListener('mousedown', function star(event){
    })
 
 
- canvas.addEventListener('onmouseup', function top(event){
+ canvas.addEventListener('click', function top(event){
 
   if (pintura) {
-    context.stroke();
+ 
     context.closePath();
+       context.stroke();
      pintura = false;
   }
 
