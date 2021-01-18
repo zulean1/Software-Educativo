@@ -6,7 +6,7 @@ context= canvas.getContext('2d');
 context.fillStyle = "white";
 context.fillRect(0,0,canvas.width,canvas.height);
 
-
+console.log(context);
 let color ='black';
 let tamano = 20;
 let pintura = false;
@@ -16,6 +16,7 @@ let y1= 300;
 
 
 window.addEventListener("load",  function draw(){
+
 
   context.font = 'italic bold 300px Roboto, sans-serif ';
   context.strokeText('A a', x1, y1);
@@ -49,13 +50,13 @@ canvas.addEventListener('mousedown', function star(event){
     let x = event.clientX - context.canvas.offsetLeft;
     let y = event.clientY- context.canvas.offsetTop;
 
-    const distance = Math.sqrt((x- x1) + 
-      (y- y1));
+   let x1= 40;
+   let y1= 300;
 
 
-  if ( distance< x1 && distance <y1 && pintura) {
-
-   context.lineTo(x,y);
+  if (pintura) {
+   context.beginPath();
+   context.lineTo(x1,y1);
    context.strokeStyle= color;
    context.lineWidth = 20;
    context.lineCap= 'round';
