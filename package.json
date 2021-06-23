@@ -1,0 +1,19 @@
+{
+  "name": "software-educativo",
+  "version": "1.0.0",
+  "description": "Software Educativo de Lectoescritura ",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zulean1/Software-Educativo.git"
+  },
+  "author": "Zuleidy Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zulean1/Software-Educativo/issues"
+  },
+  "homepage": "https://github.com/zulean1/Software-Educativo#readme"
+}
